@@ -1,0 +1,412 @@
+:root{
+  --primary:#000000;
+  --accent:#8B4513;
+  --muted:#f7f6f4;
+  --text:#222;
+  --radius:12px;
+  --Sienna:#D2B48C	;
+    --dark: #343a40;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*{box-sizing:border-box}
+body{font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', 'Poppins', sans-serif; color:var(--text); margin:9; background:#d9f53b}
+.container{max-width:1100px;margin:0 auto;padding:15px}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.site-header{position:sticky;top: 9px;;background:rgba(204, 202, 202, 0.95);backdrop-filter:saturate(120%);z-index:50;border-bottom:1px solid #eee}
+logo {
+
+  font-weight: 700;
+
+  color: var(--accent); /* Mudança: cor para marrom/areia */
+
+  font-size: 40px; /* Aumento: fonte maior */
+
+  font-family: 'Poppins', sans-serif; /* Letras diferentes: fonte bold para títulos */
+
+  letter-spacing: 1px; /* Espaçamento entre letras para estilo único */
+
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidade */
+
+}
+.main-nav a{margin-left:24px;text-decoration:none;color:var(--primary)}
+.btn-cta{background:var(--Sienna);color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none}
+.nav-toggle{display:none;background:none;border:0;font-size:24px}
+
+/* Logo com Imagem Pequena */
+.logo {
+  display: flex; /* Permite alinhar texto e imagem lado a lado */
+   width: 400px; 
+  align-items: center; /* Alinha verticalmente */
+  gap: 60px; /* Espaço pequeno entre texto e imagem */
+  font-weight: 900; /* Corrigido: 1200 é inválido; 700 para negrito padrão (ajuste para 600 se quiser mais leve) */
+  color: var(--primary);
+}
+
+.logo-icon {
+  width: 100px; /* Seu ajuste: Tamanho maior */
+  height: auto; /* Mantém proporção */
+  opacity: 0.8; /* Seu ajuste: Quase transparente (80% visível) */
+  transition: opacity 0.3s ease; /* Suave hover */
+  background-color: transparent; /* Novo: Garante que o elemento não tenha fundo branco */
+  border: none; /* Novo: Remove qualquer borda que possa simular quadrado */
+  mix-blend-mode: multiply; /* Opcional: Ajuda a "misturar" a imagem com o fundo se houver resquícios brancos (remova se não precisar) */
+}
+
+.logo-icon:hover {
+  opacity: 1; /* No hover, fica totalmente visível */
+}
+
+
+
+/* HERO */
+.hero{position:relative;height:700px;display:flex;align-items:center}
+.hero-media{position:absolute;inset:0;background-size:cover;background-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(77, 16, 231, 0.5),rgba(23,55,68,0.25))}
+.hero-content{position:relative;color:#eee;padding:40px}
+.hero h1{font-family:'Poppins',sans-serif;font-size:36px;margin:0 0 10px}
+.lead{max-width:620px}
+.btn-primary{display:inline-block;margin-top:12px;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
+/* HERO (Transparência na Foto Principal) */
+/* ... (mantenha as regras existentes: .hero, .hero-content, etc.) ... */
+
+.hero-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Mantém o cover padrão para preencher o hero */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat;
+  opacity: 0.8; /* Novo: Um pouco transparente (70% visível) – ajuste para 0.6 se quiser mais sutil */
+  transition: opacity 0.3s ease; /* Opcional: Suave mudança no hover */
+}
+
+/* Opcional: Hover para tornar a foto menos transparente (efeito interativo) */
+.hero:hover .hero-media {
+  opacity: 0.8; /* Aumenta visibilidade ao passar o mouse */
+}
+
+/* Responsivo: Mantém transparência em mobile */
+@media (max-width: 700px) {
+  .hero-media {
+    opacity: 0.7; /* Mesmo valor – não muda */
+  }
+}
+
+
+/* SERVICES (Mesclado: Bola redonda marrom preservada + estilos dos cards) */
+.servicos h2 {margin-top: 60px} /* Mantido do anterior: Espaço no topo */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colunas padrão */
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.service {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.service h3 {
+  margin: 0 0 8px; /* Do primeiro bloco: Margem inferior para separar título do texto */
+  color: var(--primary); /* Adicionado: Usa preto da paleta para consistência */
+}
+
+.service p {
+  margin: 0; /* Do primeiro bloco: Sem margem extra */
+  color: var(--text); /* Do primeiro bloco: Cor do texto geral */
+  line-height: 1.6; /* Do primeiro bloco: Espaçamento de linha para melhor leitura */
+}
+
+.icon {
+  width: 64px; /* Do segundo bloco: Largura fixa para círculo */
+  height: 64px; /* Do segundo bloco: Altura fixa para círculo */
+  border-radius: 50%; /* Do segundo bloco: Mantido – cria a bola redonda perfeita */
+  background: var(--accent); /* Do segundo bloco: Fundo marrom (não removido!) */
+  display: flex; /* Do segundo bloco: Para centralizar o conteúdo */
+  align-items: center; /* Do segundo bloco: Centraliza verticalmente */
+  justify-content: center; /* Do segundo bloco: Centraliza horizontalmente */
+  color: #fff; /* Do segundo bloco: Texto branco para contraste na bola marrom */
+  font-weight: 700; /* Do segundo bloco: Negrito para o "✓" */
+  font-size: 32px; /* Do primeiro bloco: Tamanho maior para visibilidade no círculo */
+  margin-top: 4px; /* Do primeiro bloco: Leve espaçamento superior (se o layout precisar) */
+  line-height: 1; /* Adicionado: Evita vazamento vertical do texto */
+  overflow: hidden; /* Adicionado: Corta qualquer excesso para manter o círculo intacto */
+  flex-shrink: 0; /* Adicionado: Impede encolhimento no flex do .service */
+}
+.fotos-sobre {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.fotos-sobre img {
+  width: 32%; /* cada foto ocupa aproximadamente 1/3 da largura */
+  height: auto;
+  border-radius: 8px; /* bordas arredondadas */
+  object-fit: cover;
+}
+
+/* ABOUT + CONTACT */
+.sobre, .contato{margin-top:40px}
+.contato form label{display:block;margin-bottom:12px}
+.contato input,.contato textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
+
+.site-footer{margin-top:40px;padding:20px 0;border-top:1px solid #eee}
+
+/* cookie bar */
+.cookie-bar{position:fixed;left:0;right:0;bottom:0;background:#fff;padding:14px;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
+/* WhatsApp Link */
+#whatsappLink {
+  color: #25D366; /* Verde oficial do WhatsApp */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#whatsappLink:hover {
+  color: #128C7E; /* Verde mais escuro no hover */
+  text-decoration: underline;
+}
+/* ===== ORÇAMENTO ===== */
+.header {
+  background-color: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.container.orcamento {
+  max-width: 700px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-orcamento {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 5px rgba(139, 69, 19, 0.4);
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--Sienna);
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .container.orcamento {
+    margin: 2rem 1rem;
+    padding: 2rem 1.2rem;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ======= CONTATO ======= */
+.contato {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-contato {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-contato label {
+  text-align: left;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.form-contato input,
+.form-contato textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-contato button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-contato button:hover {
+  background-color: #a0522d;
+}
+
+/* WhatsApp */
+.whatsapp-contato {
+  margin-top: 2rem;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebd5c;
+}
+/* ===== Fundo semitransparente nas páginas ===== */
+body {
+  position: relative;
+  background: url("../img/fundo-cuidadora.jpg") no-repeat center center fixed; /* troque o nome do arquivo */
+  background-size: cover;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7); /* camada branca translúcida */
+  z-index: -1;
+}
+
+/* Garante que o conteúdo fique por cima da imagem */
+main, header, footer {
+  position: relative;
+  z-index: 1;
+}
+.pagina-contato {
+  background: url("../img/contato.img") no-repeat center/cover fixed;
+}
+
+.pagina-orcamento {
+  background: url("../img/orcamento.img") no-repeat center/cover fixed;
+}
+
+.pagina-depoimentos {
+  background: url("../img/imagem\ 2.png") no-repeat center/cover fixed;
+
+}
+  
+/* Exibe botão hamburguer no mobile */
+@media (max-width: 767px) {
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 100;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 64px; /* ajuste conforme seu header */
+    right: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+  }
+  .main-nav.active {
+    display: flex;
+  }
+}
+
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 4px;
+  background: var(--primary);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.35s;
+}
+.nav-toggle span::before {
+  transform: translateY(-10px);
+}
+.nav-toggle span::after {
+  transform: translateY(10px);
+}

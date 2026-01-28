@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Orçamento — Arte de Cuidar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <body class="pagina-orcamento">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Arte de Cuidar <img src="img/Captura-de-tela-2025-10-08-101202.ico" alt="Ícone Arte de Cuidar" class="logo-icon"></div>
+      <nav class="main-nav">
+        <a href="index.html#Inicio">Início</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#servicos">Serviços</a>
+        <a href="depoimentos.html">Depoimentos</a>
+        <a href="orcamento.html" class="active">Orçamento</a>
+        <a class="btn-cta" href="contato.html">Fale conosco</a>
+        <button class="nav-toggle" aria-label="Abrir menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="orcamento">
+      <h2>Solicite seu Orçamento</h2>
+      <p>
+        Preencha o formulário abaixo e conte um pouco sobre o tipo de atendimento que você precisa.
+        Entraremos em contato o mais breve possível com um orçamento personalizado.
+      </p>
+
+      <form class="form-orcamento" action="https://formsubmit.co/SEU-EMAIL-AQUI" method="POST">
+        <!-- Troque SEU-EMAIL-AQUI pelo e-mail da dona da empresa -->
+
+        <div class="form-group">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="Seu e-mail para contato">
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" required placeholder="(DDD) 90000-0000">
+        </div>
+
+        <div class="form-group">
+          <label for="servico">Serviço desejado</label>
+          <select id="servico" name="servico" required>
+            <option value="">Selecione...</option>
+            <option value="Acompanhamento em consultas">Acompanhamento em consultas</option>
+            <option value="Acompanhamento hospitalar">Acompanhamento hospitalar</option>
+            <option value="Administração de medicação">Administração de medicação</option>
+            <option value="Higiene e cuidados pessoais">Higiene e cuidados pessoais</option>
+            <option value="Atendimento domiciliar">Atendimento domiciliar</option>
+            <option value="Transporte e tarefas">Transporte e tarefas</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem">Detalhes do atendimento</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos um pouco sobre o que precisa..."></textarea>
+        </div>
+
+        <!-- Campos ocultos para o FormSubmit -->
+        <input type="hidden" name="_subject" value="Novo orçamento - Arte de Cuidar">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+
+        <button type="submit" class="btn-primary">Enviar Solicitação</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="ano"></span> Arte de Cuidar — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <div id="cookieBar" class="cookie-bar">
+    Este site usa cookies para melhorar sua experiência. <button id="acceptCookies">Aceitar</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
